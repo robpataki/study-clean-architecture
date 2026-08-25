@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1050" width="1000" height="1050" role="img" aria-labelledby="i9754-title i9754-desc">
+  <title id="i9754-title">The Main Sequence: Abstractness vs Instability</title>
+  <desc id="i9754-desc">
+    A square graph plotting Abstractness (A) on the vertical axis against Instability (I) on
+    the horizontal axis, both ranging from 0 to 1. A diagonal line, the Main Sequence, runs
+    from (0,1) to (1,0): components should sit close to this line. Near the origin (0,0), a
+    quarter-circle marks the Zone of Pain, where components are concrete and stable, so they
+    are hard to change. Near the top-right corner (1,1), a second quarter-circle marks the
+    Zone of Uselessness, where components are abstract and unstable, so nothing depends on
+    them. Together these two arcs are labelled the Zones of Exclusion, regions well-designed
+    components should avoid.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .axis { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+    .axis-dashed { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-dasharray: 10 8; }
+    .sequence { fill: none; stroke: #1a1a1a; stroke-width: 2.5; }
+    .zone { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+    .coord { font: 20px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .zone-label { font: italic 20px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .sequence-label { font: italic 22px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .axis-title { font: 600 22px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .caption { font: 700 26px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1000" height="1050" />
+
+  <g id="axes" aria-label="Plot axes from 0 to 1 on both dimensions">
+    <line class="axis" x1="150" y1="850" x2="150" y2="150" />
+    <line class="axis" x1="150" y1="850" x2="850" y2="850" />
+    <line class="axis-dashed" x1="150" y1="150" x2="850" y2="150" />
+    <line class="axis-dashed" x1="850" y1="150" x2="850" y2="850" />
+  </g>
+
+  <g id="corner-coordinates" aria-label="Corner coordinates of the graph">
+    <text class="coord" x="100" y="890">(0, 0)</text>
+    <text class="coord" x="900" y="890">(1, 0)</text>
+    <text class="coord" x="100" y="130">(0, 1)</text>
+    <text class="coord" x="900" y="130">(1, 1)</text>
+  </g>
+
+  <g id="axis-titles" aria-label="Axis titles">
+    <text class="axis-title" x="500" y="950">Instability (I)</text>
+    <text class="axis-title" x="60" y="500" transform="rotate(-90 60 500)">Abstractness (A)</text>
+  </g>
+
+  <g id="main-sequence" aria-label="The Main Sequence diagonal from (0,1) to (1,0)">
+    <line class="sequence" x1="150" y1="150" x2="850" y2="850" />
+    <text class="sequence-label" x="500" y="465" transform="rotate(45 500 465)">The Main Sequence</text>
+  </g>
+
+  <g id="zone-of-pain" aria-label="Zone of Pain quarter circle near the origin">
+    <path class="zone" d="M150,630 A220,220 0 0 1 370,850" />
+    <text class="zone-label" x="242" y="750" transform="rotate(-45 242 758)">Zone of</text>
+    <text class="zone-label" x="242" y="778" transform="rotate(-45 242 758)">Pain</text>
+  </g>
+
+  <g id="zone-of-uselessness" aria-label="Zone of Uselessness quarter circle near the top-right corner">
+    <path class="zone" d="M630,150 A220,220 0 0 0 850,370" />
+    <text class="zone-label" x="758" y="232" transform="rotate(-60 758 242)">Zone of</text>
+    <text class="zone-label" x="758" y="260" transform="rotate(-60 758 242)">Uselessness</text>
+  </g>
+
+  <text class="caption" x="500" y="1020">Zones of Exclusion</text>
+</svg>

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1150" width="1400" height="1150" role="img" aria-labelledby="i9675-title i9675-desc">
+  <title id="i9675-title">Figure 22.2: A typical web-based Java system utilizing a database</title>
+  <desc id="i9675-desc">
+    Controller populates Input Data and calls the Input Boundary interface. Use Case
+    Interactor implements Input Boundary, reads Input Data, uses Entities, populates Output
+    Data, and calls both the Output Boundary interface and the Data Access Interface.
+    Presenter implements Output Boundary, reads Output Data, and populates the View Model,
+    which View reads. Data Access implements the Data Access Interface, uses the Database,
+    and builds Entities. Two double lines mark architectural boundaries: one separates the
+    Controller, Presenter, View Model and the boundary interfaces from the interactor and
+    entities; the other separates View, Data Access and Database, the outermost
+    frameworks-and-drivers layer, from everything above it.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+    .name { font: 700 16px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .stereotype { font: italic 12px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .edge { fill: none; stroke: #1a1a1a; stroke-width: 1.5; }
+    .edge-label { font: 12px Arial, Helvetica, sans-serif; fill: #333333; }
+    .boundary { stroke: #1a1a1a; stroke-width: 4; }
+    .note { font: italic 12px Arial, Helvetica, sans-serif; fill: #444444; }
+  </style>
+
+  <defs>
+    <marker id="arrowOpen4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowHollow4" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="1150" />
+
+  <g id="boundaries" aria-label="Architectural boundaries">
+    <line class="boundary" x1="350" y1="20" x2="350" y2="958" />
+    <line class="boundary" x1="365" y1="20" x2="365" y2="958" />
+    <line class="boundary" x1="20" y1="960" x2="1380" y2="960" />
+    <line class="boundary" x1="20" y1="975" x2="1380" y2="975" />
+  </g>
+
+  <g id="left-column" aria-label="Controller, Presenter, View Model and View">
+    <rect class="box" x="60" y="80" width="220" height="70" />
+    <text class="name" x="170" y="120">Controller</text>
+
+    <rect class="box" x="60" y="240" width="220" height="70" />
+    <text class="name" x="170" y="280">Presenter</text>
+
+    <rect class="box" x="60" y="520" width="220" height="70" />
+    <text class="stereotype" x="170" y="538">«DS»</text>
+    <text class="name" x="170" y="565">View Model</text>
+
+    <rect class="box" x="60" y="1000" width="220" height="70" />
+    <text class="name" x="170" y="1040">View</text>
+  </g>
+
+  <g id="boundary-interfaces" aria-label="Input and output data and boundary interfaces">
+    <rect class="box" x="420" y="50" width="240" height="80" />
+    <text class="stereotype" x="540" y="70">«DS»</text>
+    <text class="name" x="540" y="97">Input Data</text>
+
+    <rect class="box" x="420" y="220" width="240" height="80" />
+    <text class="stereotype" x="540" y="240">«I»</text>
+    <text class="name" x="540" y="267">Input Boundary</text>
+
+    <rect class="box" x="420" y="400" width="240" height="80" />
+    <text class="stereotype" x="540" y="420">«I»</text>
+    <text class="name" x="540" y="447">Output Boundary</text>
+
+    <rect class="box" x="420" y="570" width="240" height="80" />
+    <text class="stereotype" x="540" y="590">«DS»</text>
+    <text class="name" x="540" y="617">Output Data</text>
+  </g>
+
+  <g id="use-case-and-entities" aria-label="Use Case Interactor and Entities">
+    <rect class="box" x="820" y="280" width="240" height="100" />
+    <text class="name" x="940" y="335">Use Case Interactor</text>
+
+    <rect class="box" x="1140" y="280" width="200" height="100" />
+    <text class="name" x="1240" y="335">Entities</text>
+
+    <rect class="box" x="820" y="760" width="240" height="90" />
+    <text class="stereotype" x="940" y="780">«I»</text>
+    <text class="name" x="940" y="807">Data Access Interface</text>
+  </g>
+
+  <g id="outer-layer" aria-label="Data Access and Database">
+    <rect class="box" x="820" y="1000" width="220" height="70" />
+    <text class="name" x="930" y="1040">Data Access</text>
+
+    <rect class="box" x="1140" y="1000" width="200" height="70" />
+    <text class="name" x="1240" y="1040">Database</text>
+  </g>
+
+  <g id="relationships" aria-label="Relationships">
+    <line class="edge" x1="280" y1="115" x2="418" y2="90" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="392" y="82">populates</text>
+
+    <line class="edge" x1="280" y1="130" x2="418" y2="260" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="300" y="205">calls</text>
+
+    <line class="edge" x1="820" y1="300" x2="662" y2="260" marker-end="url(#arrowHollow4)" />
+    <text class="edge-label" x="700" y="270">implements</text>
+
+    <line class="edge" x1="820" y1="290" x2="662" y2="90" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="700" y="170">reads</text>
+
+    <line class="edge" x1="820" y1="360" x2="662" y2="440" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="700" y="415">calls</text>
+
+    <line class="edge" x1="820" y1="370" x2="662" y2="610" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="700" y="500">populates</text>
+
+    <line class="edge" x1="1060" y1="330" x2="1138" y2="330" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="1075" y="320">uses</text>
+
+    <line class="edge" x1="940" y1="380" x2="940" y2="758" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="955" y="570">calls</text>
+
+    <line class="edge" x1="280" y1="270" x2="418" y2="440" marker-end="url(#arrowHollow4)" />
+    <text class="edge-label" x="387" y="400">implements</text>
+
+    <line class="edge" x1="280" y1="285" x2="418" y2="610" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="380" y="540">reads</text>
+
+    <line class="edge" x1="170" y1="310" x2="170" y2="518" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="200" y="420">populates</text>
+
+    <line class="edge" x1="170" y1="998" x2="170" y2="592" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="200" y="800">reads</text>
+
+    <line class="edge" x1="930" y1="998" x2="935" y2="852" marker-end="url(#arrowHollow4)" />
+    <text class="edge-label" x="965" y="920">implements</text>
+
+    <line class="edge" x1="1040" y1="1035" x2="1138" y2="1035" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="1055" y="1025">uses</text>
+
+    <path class="edge" d="M1010,998 C1080,780 1150,500 1200,382" marker-end="url(#arrowOpen4)" />
+    <text class="edge-label" x="1075" y="700">builds</text>
+  </g>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000" role="img" aria-labelledby="i9632-title i9632-desc">
+  <title id="i9632-title">Figure 22.1: The Clean Architecture</title>
+  <desc id="i9632-desc">
+    Four concentric rings, from outer to inner: Frameworks and Drivers (Web, Devices, DB,
+    UI, External Interfaces), Interface Adapters (Controllers, Gateways, Presenters), Use
+    Cases, and Entities at the centre. Three arrows on the left cross the rings pointing
+    inward, showing that source code dependencies always point toward the centre. A legend
+    on the right maps the rings to Enterprise Business Rules, Application Business Rules,
+    Interface Adapters, and Frameworks and Drivers. A smaller diagram on the lower right
+    shows the flow of control at the Use Case boundary: a Controller calls the Use Case
+    Input Port, which the Use Case Interactor implements; the Interactor calls the Use Case
+    Output Port, which the Presenter implements, and control ultimately returns to the
+    Presenter.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .ring-white { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2.5; }
+    .ring-shaded { fill: #d9d9d9; stroke: #1a1a1a; stroke-width: 2.5; }
+    .title { font: 700 30px Georgia, "Times New Roman", serif; text-anchor: middle; fill: #1a1a1a; }
+    .ring-label { font: 700 20px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .center-label { font: 700 22px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .legend-text { font: 18px Arial, Helvetica, sans-serif; fill: #1a1a1a; }
+    .swatch { stroke: #1a1a1a; stroke-width: 1.5; }
+    .leader { fill: none; stroke: #1a1a1a; stroke-width: 1; }
+    .box { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+    .box-name { font: 700 15px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .stereotype { font: italic 12px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .edge { fill: none; stroke: #1a1a1a; stroke-width: 1.75; }
+    .flow { fill: none; stroke: #666666; stroke-width: 1.75; }
+    .flow-label { font: italic 14px Arial, Helvetica, sans-serif; fill: #444444; }
+    .in-arrow { fill: none; stroke: #1a1a1a; stroke-width: 3; }
+  </style>
+
+  <defs>
+    <marker id="arrowOpen3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowHollow3" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowThick3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="3" />
+    </marker>
+    <marker id="arrowFlow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#666666" stroke-width="1.75" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="1000" />
+
+  <text class="title" x="430" y="45">The Clean Architecture</text>
+
+  <g id="rings" aria-label="Concentric architecture layers">
+    <circle class="ring-white" cx="430" cy="540" r="430" />
+    <circle class="ring-white" cx="430" cy="540" r="330" />
+    <circle class="ring-shaded" cx="430" cy="540" r="220" />
+    <circle class="ring-white" cx="430" cy="540" r="110" />
+  </g>
+
+  <g id="ring-labels" aria-label="Layer names">
+    <text class="ring-label" x="119" y="322">Devices</text>
+    <text class="ring-label" x="741" y="322">Web</text>
+    <text class="ring-label" x="430" y="265">Controllers</text>
+    <text class="ring-label" x="430" y="375">Use Cases</text>
+    <text class="center-label" x="430" y="547">Entities</text>
+    <text class="ring-label" x="219" y="717">Gateways</text>
+    <text class="ring-label" x="641" y="717">Presenters</text>
+    <text class="ring-label" x="73" y="670">DB</text>
+    <text class="ring-label" x="787" y="670">UI</text>
+    <text class="ring-label" x="430" y="920">External Interfaces</text>
+  </g>
+
+  <g id="dependency-arrows" aria-label="Source code dependencies point inward across every layer">
+    <line class="in-arrow" x1="0" y1="540" x2="55" y2="540" marker-end="url(#arrowThick3)" />
+    <line class="in-arrow" x1="85" y1="540" x2="140" y2="540" marker-end="url(#arrowThick3)" />
+    <line class="in-arrow" x1="170" y1="540" x2="225" y2="540" marker-end="url(#arrowThick3)" />
+  </g>
+
+  <g id="legend" aria-label="Legend mapping rings to business rule and adapter layers">
+    <rect class="swatch" x="950" y="220" width="26" height="26" fill="#ffffff" />
+    <text class="legend-text" x="988" y="240">Enterprise Business Rules</text>
+    <path class="leader" d="M950,233 L514,469" />
+
+    <rect class="swatch" x="950" y="290" width="26" height="26" fill="#d9d9d9" />
+    <text class="legend-text" x="988" y="310">Application Business Rules</text>
+    <path class="leader" d="M950,303 L599,399" />
+
+    <rect class="swatch" x="950" y="360" width="26" height="26" fill="#ffffff" />
+    <text class="legend-text" x="988" y="380">Interface Adapters</text>
+    <path class="leader" d="M950,373 L700,351" />
+
+    <rect class="swatch" x="950" y="430" width="26" height="26" fill="#ffffff" />
+    <text class="legend-text" x="988" y="450">Frameworks &amp; Drivers</text>
+    <path class="leader" d="M950,443 L802,325" />
+  </g>
+
+  <g id="use-case-boundary" aria-label="Flow of control at the Use Case boundary">
+    <rect class="box" x="960" y="610" width="180" height="55" />
+    <text class="box-name" x="1050" y="642">Presenter</text>
+
+    <rect class="box" x="1210" y="610" width="190" height="55" />
+    <text class="stereotype" x="1370" y="626">«I»</text>
+    <text class="box-name" x="1305" y="644">Use Case Output Port</text>
+
+    <rect class="box" x="1210" y="720" width="190" height="55" />
+    <text class="box-name" x="1305" y="753">Use Case Interactor</text>
+
+    <rect class="box" x="1210" y="830" width="190" height="55" />
+    <text class="stereotype" x="1370" y="846">«I»</text>
+    <text class="box-name" x="1305" y="864">Use Case Input Port</text>
+
+    <rect class="box" x="960" y="830" width="180" height="55" />
+    <text class="box-name" x="1050" y="862">Controller</text>
+
+    <line class="edge" x1="1140" y1="857" x2="1208" y2="857" marker-end="url(#arrowOpen3)" />
+    <line class="edge" x1="1305" y1="775" x2="1305" y2="828" marker-end="url(#arrowHollow3)" />
+    <line class="edge" x1="1305" y1="720" x2="1305" y2="667" marker-end="url(#arrowOpen3)" />
+    <line class="edge" x1="1140" y1="637" x2="1208" y2="637" marker-end="url(#arrowHollow3)" />
+
+    <path class="flow" d="M1208,738 C1120,700 1080,680 1055,668" marker-end="url(#arrowFlow3)" />
+    <text class="flow-label" x="1075" y="700">Flow of control</text>
+  </g>
+</svg>

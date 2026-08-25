@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 700" width="940" height="700" role="img" aria-labelledby="i9576-title i9576-desc">
+  <title id="i9576-title">Flow of control versus source code dependencies: Read Char, Translate, Write Char</title>
+  <desc id="i9576-desc">
+    A character flows at run time from Read Char, through Translate (which also reads a
+    Table), to Write Char. The flow of control therefore runs Read Char to Translate to
+    Write Char. However, the source code dependencies point the other way: Read Char and
+    Write Char both depend on Translate, so the dependency arrows point up into Translate,
+    against the direction the character actually flows.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .ellipse { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.5; }
+    .name { font: 700 20px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .label { font: 15px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .small-label { font: 14px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .dep-label { font: 13px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #333333; }
+    .flow { fill: none; stroke: #1a1a1a; stroke-width: 1.75; }
+    .dependency { fill: none; stroke: #1a1a1a; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    .dotted { fill: none; stroke: #1a1a1a; stroke-width: 1.25; stroke-dasharray: 2 4; }
+    .dot { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.5; }
+  </style>
+
+  <defs>
+    <marker id="arrowOpen2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="940" height="700" />
+
+  <g id="table" aria-label="Table data structure">
+    <line x1="760" y1="20" x2="890" y2="20" stroke="#1a1a1a" stroke-width="1.5" />
+    <text class="label" x="825" y="50">Table</text>
+    <line x1="760" y1="65" x2="890" y2="65" stroke="#1a1a1a" stroke-width="1.5" />
+  </g>
+
+  <ellipse id="translate" class="ellipse" cx="450" cy="200" rx="180" ry="100" aria-label="Translate operation" />
+  <text class="name" x="450" y="208">Translate</text>
+
+  <ellipse id="read-char" class="ellipse" cx="170" cy="560" rx="170" ry="92" aria-label="Read Char operation" />
+  <text class="name" x="170" y="568">Read Char</text>
+
+  <ellipse id="write-char" class="ellipse" cx="730" cy="560" rx="170" ry="92" aria-label="Write Char operation" />
+  <text class="name" x="730" y="568">Write Char</text>
+
+  <g id="flow-of-control" aria-label="Flow of control">
+    <path class="flow" d="M760,60 C650,90 580,110 560,130" marker-end="url(#arrowOpen2)" />
+
+    <path class="flow" d="M260,485 C300,420 320,360 335,300" marker-end="url(#arrowOpen2)" />
+    <text class="small-label" x="260" y="410">char</text>
+
+    <path class="flow" d="M575,300 C600,360 630,420 655,485" marker-end="url(#arrowOpen2)" />
+    <text class="small-label" x="640" y="410">char</text>
+  </g>
+
+  <g id="char-io-markers" aria-label="External character input and output">
+    <text class="small-label" x="35" y="360">char</text>
+    <circle class="dot" cx="65" cy="378" r="6" />
+    <line class="flow" x1="72" y1="372" x2="130" y2="335" marker-end="url(#arrowOpen2)" />
+
+    <circle class="dot" cx="660" cy="330" r="6" />
+    <text class="small-label" x="700" y="325">char</text>
+    <line class="flow" x1="666" y1="337" x2="715" y2="380" marker-end="url(#arrowOpen2)" />
+  </g>
+
+  <g id="source-code-dependencies" aria-label="Source code dependencies point from Read Char and Write Char to Translate">
+    <path class="dependency" d="M340,470 C365,400 385,340 395,300" marker-end="url(#arrowOpen2)" />
+    <path class="dependency" d="M565,300 C580,340 600,400 615,470" marker-end="url(#arrowOpen2)" />
+
+    <text class="dep-label" x="450" y="392">source</text>
+    <text class="dep-label" x="450" y="407">code</text>
+    <text class="dep-label" x="450" y="422">dependencies</text>
+
+    <path class="dotted" d="M450,438 C425,428 410,432 398,438" marker-end="url(#arrowOpen2)" />
+    <path class="dotted" d="M450,438 C475,428 490,432 502,438" marker-end="url(#arrowOpen2)" />
+  </g>
+</svg>

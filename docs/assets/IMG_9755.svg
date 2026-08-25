@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 950" width="1000" height="950" role="img" aria-labelledby="i9755-title i9755-desc">
+  <title id="i9755-title">Dependency Inversion Principle: high-level and low-level modules depending on an abstraction</title>
+  <desc id="i9755-desc">
+    A high-level module depends downward on an Abstraction, shown as an interface. A low-level
+    module implements that same Abstraction, shown as an upward realization arrow. Because both
+    modules now depend on the abstraction rather than the high-level module depending directly on
+    the low-level module, the source code dependency between them is inverted. Below, the
+    Abstraction belongs to an Abstract component, and the implementing low-level module belongs
+    to a Concrete component, linked by a connecting curve.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .boundary { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+    .name { font: 700 24px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .abstraction { font: italic 700 22px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .edge { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+    .realize { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-dasharray: 8 6; }
+    .inversion { fill: none; stroke: #c0392b; stroke-width: 2; stroke-dasharray: 9 7; }
+    .inversion-label { font: italic 20px Arial, Helvetica, sans-serif; fill: #c0392b; }
+    .component-label { font: 22px Arial, Helvetica, sans-serif; fill: #1a1a1a; }
+    .connector { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+  </style>
+
+  <defs>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowHollow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#c0392b" stroke-width="1.5" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1000" height="950" />
+
+  <g id="module-boundary" aria-label="Boundary containing the high-level module, the abstraction and the low-level module">
+    <rect class="boundary" x="120" y="60" width="560" height="480" />
+  </g>
+
+  <g id="high-level-module" aria-label="High-level module depends on the abstraction">
+    <text class="name" x="400" y="140">High-level module</text>
+    <line class="edge" x1="400" y1="165" x2="400" y2="270" marker-end="url(#arrowOpen)" />
+  </g>
+
+  <g id="abstraction" aria-label="Abstraction, shown as an interface">
+    <text class="abstraction" x="400" y="320">ABSTRACTION</text>
+    <text class="abstraction" x="400" y="348">(interface)</text>
+  </g>
+
+  <g id="low-level-module" aria-label="Low-level module implements the abstraction">
+    <line class="realize" x1="400" y1="470" x2="400" y2="375" marker-end="url(#arrowHollow)" />
+    <text class="name" x="400" y="500">Low-level module</text>
+  </g>
+
+  <g id="dependency-inversion" aria-label="The dependency between the two modules is inverted through the abstraction">
+    <path class="inversion" d="M440,420 L780,420" marker-end="url(#arrowRed)" />
+    <text class="inversion-label" x="800" y="427">Dependency inversion</text>
+  </g>
+
+  <g id="components" aria-label="The abstraction lives in an abstract component; the implementation lives in a concrete component">
+    <path class="connector" d="M130,760 C250,700 496,700 624,760 C688,790 780,805 870,805" />
+    <text class="component-label" x="300" y="700">Abstract component</text>
+    <text class="component-label" x="560" y="860">Concrete component</text>
+  </g>
+</svg>

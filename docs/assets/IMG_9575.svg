@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" width="940" height="600" role="img" aria-labelledby="i9575-title i9575-desc">
+  <title id="i9575-title">Boundary crossing: Client, Service, ServiceImpl and Data</title>
+  <desc id="i9575-desc">
+    Client uses the Service interface and the Data structure directly. ServiceImpl implements
+    Service and also uses Data. A double vertical line marks the architectural boundary:
+    ServiceImpl sits on the outer side of the boundary and depends inward on the Service
+    interface and the Data structure, so all dependencies cross the boundary in the same
+    direction, from outer to inner.
+  </desc>
+
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+    .divider { stroke: #1a1a1a; stroke-width: 1.5; }
+    .name { font: 700 18px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .stereotype { font: italic 13px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .method { font: 15px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #1a1a1a; }
+    .label { font: 12px Arial, Helvetica, sans-serif; text-anchor: middle; fill: #333333; }
+    .edge { fill: none; stroke: #1a1a1a; stroke-width: 1.75; }
+    .boundary { stroke: #1a1a1a; stroke-width: 4; }
+    .note { font: italic 12px Arial, Helvetica, sans-serif; fill: #444444; }
+  </style>
+
+  <defs>
+    <marker id="arrowOpen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+    <marker id="arrowHollow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="940" height="600" />
+
+  <g id="architectural-boundary" aria-label="Architectural boundary">
+    <line class="boundary" x1="636" y1="10" x2="636" y2="560" />
+    <line class="boundary" x1="648" y1="10" x2="648" y2="560" />
+    <text class="note" x="642" y="580" text-anchor="middle">architectural boundary</text>
+  </g>
+
+  <g id="client" aria-label="Client class">
+    <rect class="box" x="40" y="80" width="180" height="90" />
+    <text class="name" x="130" y="132">Client</text>
+  </g>
+
+  <g id="service" aria-label="Service interface">
+    <rect class="box" x="380" y="40" width="200" height="140" />
+    <text class="stereotype" x="480" y="63">«Interface»</text>
+    <text class="name" x="480" y="88">Service</text>
+    <line class="divider" x1="380" y1="105" x2="580" y2="105" />
+    <text class="method" x="480" y="150">+ f()</text>
+  </g>
+
+  <g id="service-impl" aria-label="ServiceImpl class">
+    <rect class="box" x="700" y="40" width="200" height="140" />
+    <text class="name" x="800" y="88">ServiceImpl</text>
+    <line class="divider" x1="700" y1="105" x2="900" y2="105" />
+    <text class="method" x="800" y="150">+ f()</text>
+  </g>
+
+  <g id="data" aria-label="Data structure">
+    <rect class="box" x="40" y="420" width="180" height="90" />
+    <text class="stereotype" x="130" y="443">«DS»</text>
+    <text class="name" x="130" y="470">Data</text>
+  </g>
+
+  <g id="edges" aria-label="Relationships">
+    <polyline class="edge" points="220,110 300,110 300,70 378,70" marker-end="url(#arrowOpen)" />
+    <text class="label" x="255" y="100">uses</text>
+
+    <line class="edge" x1="130" y1="170" x2="130" y2="418" marker-end="url(#arrowOpen)" />
+    <text class="label" x="160" y="300">uses</text>
+
+    <line class="edge" x1="698" y1="90" x2="582" y2="90" marker-end="url(#arrowHollow)" />
+    <text class="label" x="600" y="75">implements</text>
+
+    <polyline class="edge" points="750,180 750,465 222,465" marker-end="url(#arrowOpen)" />
+    <text class="label" x="480" y="453">uses</text>
+  </g>
+</svg>
