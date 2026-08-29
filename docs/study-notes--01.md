@@ -1,4 +1,4 @@
-# Clean Architecture Study notes
+# Clean Architecture Study notes 01
 
 > The only way to go fast is to go well.
 >
@@ -79,7 +79,7 @@ High-level modules should depend on abstractions rather than concrete implementa
 
 **Stable abstractions > Fragile concretions**
 
-<img src="assets/IMG_9755.svg" class="diagram" alt="" role="presentation" />
+<img src="../assets/diagram--dip.svg" class="diagram" alt="" role="presentation" />
 
 The source code dependencies are inverted against the flow of control.
 
@@ -190,7 +190,7 @@ $$
 
 ### The Zones of Exclusion
 
-<img src="assets/IMG_9754.svg" class="diagram" alt="" role="presentation" />
+<img src="../assets/diagram--zones-of-exclusion.svg" class="diagram" alt="" role="presentation" />
 
 #### The Zone of Pain
 
@@ -218,21 +218,6 @@ $$
 Use <u>Distance</u> to measure each components' conformance to the **Main Sequence**.
 
 > Note: Monitoring value of `D` over time to keep it within control linits helps to decide when a component should be refactored.
-
----
-
-## Architecture - Part V (Chapter 15+)
-
-The primary purpose of architecture is to support the lifecycle of the system.
-
-Good architecture makes the system easy to:
-
-- understand,
-- develop,
-- maintain,
-- deploy.
-
-> The ultimate goal is to minimise the lifetime cost of the system and to maximise programmer productivity.
 
 ---
 
