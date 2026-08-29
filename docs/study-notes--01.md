@@ -235,7 +235,7 @@ In dynamic languages, abstract components don't exist or even if they do they ar
   .diagram {
     max-width: 50%;
     display: block;
-    margin: 0 auto;
+    margin: 1.4rem auto;
     border-radius: 8px;
     border: 2px solid lime;
   }

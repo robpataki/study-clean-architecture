@@ -94,7 +94,7 @@ This chapter has gone well over my head, but my basic understanding of it is thi
 
 > Critical Business Rules + Critical Business Data = Entity (Class)
 
-[Diagram of Loan entity UML class]
+<img src="../assets/diagram--loan-entity-uml.webp" class="diagram" alt="" role="presentation" />
 
 Some business rules are critical to business regardless if they are automated or manually implemented. Some business rules only apply to automation.
 
@@ -131,11 +131,11 @@ Frameworks are decisions to be left open.
 
 ## The Clean Architecture
 
-<img src="../assets/diagram--the-clean-architecture.jpg" class="diagram" alt="" role="presentation" />
+<img src="../assets/diagram--the-clean-architecture.webp" class="diagram" alt="" role="presentation" />
 
 All dependencies cross boundaries pointing inwards as per the **Dependency Rule**.
 
-<img src="../assets/diagram--clean-architecture-a-typical-scenario.jpg" class="diagram" alt="" role="presentation" />
+<img src="../assets/diagram--clean-architecture-a-typical-scenario.webp" class="diagram" alt="" role="presentation" />
 
 ## Presenters and Humble Objects
 
@@ -173,7 +173,7 @@ Services must be designed with internal component architectures that follow the 
   .diagram {
     max-width: 50%;
     display: block;
-    margin: 0 auto;
+    margin: 1.4rem auto;
     border-radius: 8px;
     border: 2px solid lime;
   }

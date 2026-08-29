@@ -1,6 +1,6 @@
-# Taxi Finder app
+# Taxi Finder App – Architectural Boundaries
 
-<img src="../assets/diagram--architectural-boundaries.jpg" class="diagram" alt="" role="presentation" /><br/>
+<img src="../assets/diagram--architectural-boundaries.webp" class="diagram" alt="" role="presentation" />
 
 > 💡 This is a classic **Clean Architecture boundary diagram** — it shows how high-level policy stays decoupled from low-level implementation details across an architectural boundary.
 
@@ -16,7 +16,7 @@ Top layer (`Taxi UI`, `Taxi Finder`, `Taxi Selector`, `Taxi Suppliers`, `Taxi Di
 
 ## What the arrows mean
 
-**Hollow triangle arrowhead** (pointing up from concrete classes to <A> boxes) = ***implements/realizes*** — the concrete `Rides`/`Kittens` classes implement the abstract interface.
+**Hollow triangle arrowhead** (pointing up from concrete classes to <A> boxes) = **_implements/realizes_** — the concrete `Rides`/`Kittens` classes implement the abstract interface.
 
 **Plain solid arrowhead** (e.g., `Taxi Suppliers` → `Taxi Finder`, `Taxi Dispatcher` → `Taxi Selector`) = uses/depends on — a normal call dependency, always pointing from concrete-ish/detail toward the more stable abstraction.
 
@@ -51,7 +51,7 @@ This maps directly onto the dependency-inversion/boundary-crossing material you'
   .diagram {
     max-width: 50%;
     display: block;
-    margin: 0 auto;
+    margin: 1.4rem auto;
     border-radius: 8px;
     border: 2px solid lime;
   }
